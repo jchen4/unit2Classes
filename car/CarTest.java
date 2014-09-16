@@ -1,5 +1,4 @@
 
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -13,14 +12,13 @@ import org.junit.Test;
  */
 public class CarTest
 {
-
     /**
      * Default constructor for objects of class CarTest
      */
     public CarTest()
     {
     }
-    
+
     /**
      * Sets up the test fixture.
      *
@@ -40,7 +38,7 @@ public class CarTest
     public void tearDown()
     {
     }
-    
+
     @Test
     public void testGetGasInTank()
     {     
@@ -48,6 +46,7 @@ public class CarTest
         double gallons = testCar.getGasInTank();
         assertEquals(0.0, gallons);
     }
+
     @Test
     public void testAddGas()
     {
@@ -55,9 +54,21 @@ public class CarTest
         testCar.addGas(20);
         double gallons = testCar.getGasInTank();
         assertEquals(20.0, gallons);
-        
+
         testCar.addGas(5);
         gallons = testCar.getGasInTank();
         assertEquals(25.0, gallons);
+    }
+
+    @Test
+    public viod testDrive()
+    {
+        Car testCar = new Car(50);
+        testCar.addGas(20);
+        testCar.drive(25);
+        double gallons = testCar.getGasInTank();
+        testCar.drive(100);
+        gallons = testCar.getGallonsInTank();
+        assertEquals(17.5, gallons, le-6);
     }
 }
