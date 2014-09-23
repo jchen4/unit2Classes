@@ -21,8 +21,7 @@ public class Target
     }
     
     public void draw(Graphics2D g2)
-    {
-        while (this.radius > 10)
+    {        while (this.radius > 10)
         {
             Ellipse2D.Double outerCircle = new Ellipse2D.Double(this.xcoord, this.ycoord, this.radius, this.radius);
             this.radius = this.radius - 10;
